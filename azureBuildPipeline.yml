@@ -12,7 +12,7 @@ pool:
 steps:
 - task: DotNetCoreCLI@2
   inputs:
-    azureSubscription: '$(_PersonalSubscription)'
+    azureSubscription: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
     command: 'build'
     projects: 'webapp/webapp.csproj'
 - task: DotNetCoreCLI@2
@@ -27,13 +27,13 @@ steps:
     publishLocation: 'Container'
 - task: AzureAppServiceManage@0
   inputs:
-    azureSubscription: '$(_PersonalSubscription)'
+    ConnectedServiceName: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
     Action: 'Stop Azure App Service'
     WebAppName: '$(WebAppName)'
 - task: AzureRmWebAppDeployment@5
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: '$(_PersonalSubscription)'
+    azureSubscription: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
     appType: 'webAppLinux'
     WebAppName: '$(WebAppName)'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
@@ -41,6 +41,6 @@ steps:
     DeploymentTypeLinux: 'oneDeploy'
 - task: AzureAppServiceManage@0
   inputs:
-    azureSubscription: '$(_PersonalSubscription)'
+    ConnectedServiceName: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
     Action: 'Start Azure App Service'
     WebAppName: '$(WebAppName)'
