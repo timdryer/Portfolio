@@ -6,7 +6,7 @@ variable "RG_NAME" {
   type = string
 }
 
-variable "WEBAPP_NAME {
+variable "WEBAPP_NAME" {
   type = string
 }
 
