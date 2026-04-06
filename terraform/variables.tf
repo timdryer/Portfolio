@@ -10,6 +10,6 @@ variable "webapp_name" {
   type = string
 }
 
-variable "Azure_Location" {
+variable "azure_location" {
   type = string
 }

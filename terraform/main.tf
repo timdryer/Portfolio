@@ -2,7 +2,7 @@
 
 resource "azurerm_resource_group" "Portfolio" {
   name     = var.rg_name
-  location = var.Azure_Location
+  location = var.azure_location
 }
 
 resource "azurerm_service_plan" "AppServicePlan" {
