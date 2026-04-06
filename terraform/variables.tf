@@ -1,15 +1,15 @@
-variable "subscription_id" {
+variable "SUBSCRIPTION_ID" {
   type = string
 }
 
-variable "rg_name" {
+variable "RG_NAME" {
   type = string
 }
 
-variable "webapp_name" {
+variable "WEBAPP_NAME {
   type = string
 }
 
-variable "Azure_Location" {
+variable "AZURE_LOCATION" {
   type = string
 }
