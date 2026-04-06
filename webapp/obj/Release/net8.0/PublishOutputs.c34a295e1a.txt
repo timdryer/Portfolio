@@ -1,0 +1,7 @@
+/home/timdryer/Portfolio/Portfolio/webapp/Release/webapp
+/home/timdryer/Portfolio/Portfolio/webapp/Release/appsettings.Development.json
+/home/timdryer/Portfolio/Portfolio/webapp/Release/appsettings.json
+/home/timdryer/Portfolio/Portfolio/webapp/Release/webapp.dll
+/home/timdryer/Portfolio/Portfolio/webapp/Release/webapp.deps.json
+/home/timdryer/Portfolio/Portfolio/webapp/Release/webapp.runtimeconfig.json
+/home/timdryer/Portfolio/Portfolio/webapp/Release/webapp.pdb
