@@ -20,12 +20,19 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+
 - task: DotNetCoreCLI@2
+
   inputs:
     azureSubscription: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
     command: 'build'
-    projects: '/webapp/webapp.csproj'
-    workingDirectory: '/webapp/'
+    projects: 'webapp/webapp.csproj'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    projects: 'webapp/webapp.csproj'
+    arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
