@@ -36,7 +36,7 @@ steps:
     azureSubscription: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
     appType: 'webAppLinux'
     WebAppName: '$(WebAppName)'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     RuntimeStack: 'DOTNETCORE|8.0'
     DeploymentTypeLinux: 'oneDeploy'
 - task: AzureAppServiceManage@0
