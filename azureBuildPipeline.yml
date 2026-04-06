@@ -10,22 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '8.x'
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-
 - task: DotNetCoreCLI@2
-
   inputs:
-    azureSubscription: 'Personal Subscription(e59d4a87-0808-41fc-9ae0-343de510f79e)'
+    azureSubscription: '$(_PersonalSubscription)'
     command: 'build'
     projects: 'webapp/webapp.csproj'
 - task: DotNetCoreCLI@2
@@ -38,3 +25,22 @@ steps:
     pathToPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'webapp'
     publishLocation: 'Container'
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: '$(_PersonalSubscription)'
+    Action: 'Stop Azure App Service'
+    WebAppName: '$(WebAppName)'
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: '$(_PersonalSubscription)'
+    appType: 'webAppLinux'
+    WebAppName: '$(WebAppName)'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'DOTNETCORE|8.0'
+    DeploymentTypeLinux: 'oneDeploy'
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: '$(_PersonalSubscription)'
+    Action: 'Start Azure App Service'
+    WebAppName: '$(WebAppName)'
