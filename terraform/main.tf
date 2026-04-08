@@ -18,6 +18,6 @@ resource "azurerm_linux_web_app" "WebApp" {
   resource_group_name = azurerm_resource_group.Portfolio.name
   location            = azurerm_service_plan.AppServicePlan.location
   service_plan_id     = azurerm_service_plan.AppServicePlan.id
-  https_only = true
+  #https_only = true
   site_config {}
 }
