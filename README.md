@@ -1,8 +1,14 @@
 # Portfolio
 This portfolio contains my end-to-end .NET application build and deploy to an Azure Webapp, which is managed by Terraform (infrastructure as code.) The documentation below walks the reader through each step of the project, but feel free to click the link to watch my YouTube demo.
 
-[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+<img src="images/AzureDevOps-Demo-Screenshot.png" style="box-shadow:0 0 4px rgba(0,0,0,0.6);" />
+<br>
+<sub><i>Click <a href="https://www.youtube.com/watch?v=2K1cvar12Do">here</a> for a demonstration of this pipeline in action!</i></sub>
 
+
+
+
+<hr>
 
 
 1. Install the necessary tooling locally.
